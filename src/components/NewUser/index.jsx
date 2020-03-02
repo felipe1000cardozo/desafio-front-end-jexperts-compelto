@@ -103,6 +103,20 @@ const NewUser = () => {
                     />
                   </div>
                   <div className="form-group">
+                    <label htmlFor="login">Login *</label>
+                    <input
+                      value={newUser.login}
+                      onChange={e =>
+                        setNewUser({ ...newUser, login: e.target.value })
+                      }
+                      type="text"
+                      className="form-control"
+                      id="login"
+                      placeholder="Login"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
                     <label htmlFor="telefone">Telefone</label>
                     <input
                       value={newUser.phone}
