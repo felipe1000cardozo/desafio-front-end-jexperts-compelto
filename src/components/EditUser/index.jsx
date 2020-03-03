@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Fragment } from "react";
 import { FaUserEdit } from "react-icons/fa";
-import { useState } from "react";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import Alert from "../Alert";
 import { editUser } from "../../store/modules/users/actions";
@@ -111,6 +111,7 @@ const EditUser = ({ index }) => {
                   >
                     Cancelar
                   </button>
+
                   <button
                     type="submit"
                     className="btn btn-primary mt-3"
@@ -125,15 +126,16 @@ const EditUser = ({ index }) => {
           </div>
         </div>
       </div>
-      <button
-        type="button"
-        className="btn btn-primary mr-3 mt-1 pl-3"
-        title="Editar usuário"
-        data-toggle="modal"
-        data-target={`#edit-user-modal${index}`}
-      >
-        <FaUserEdit size="20" />
-      </button>
+      <Tooltip title="Editar usuário" placement="top">
+        <button
+          type="button"
+          className="btn btn-primary mr-3 mt-1 pl-3"
+          data-toggle="modal"
+          data-target={`#edit-user-modal${index}`}
+        >
+          <FaUserEdit size="20" />
+        </button>
+      </Tooltip>
     </Fragment>
   );
 };
