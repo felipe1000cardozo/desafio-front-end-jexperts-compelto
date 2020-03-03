@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaUserPlus } from "react-icons/fa";
+import jwt from "jsonwebtoken";
 
 import Alert from "../Alert";
 import { addUser } from "../../store/modules/users/actions";
@@ -10,9 +11,10 @@ import emptyUserFields from "../../utils/emptyUserFields";
 import emailAlreadyExist from "../../utils/emailAlreadyExist";
 
 const NewUser = () => {
+  const emptyUser = { name: "", email: "", phone: "", password: "", login: "" };
   const dispatch = useDispatch();
   const users = useSelector(state => state.users);
-  const [newUser, setNewUser] = useState({ name: "", email: "", phone: "" });
+  const [newUser, setNewUser] = useState(emptyUser);
   const [canClose, setCanClose] = useState(false);
 
   const [alertEmpty, setAlertEmpty] = useState(false);
@@ -29,6 +31,11 @@ const NewUser = () => {
   const handleAddUser = (e, user) => {
     e.preventDefault();
     if (validateUser(user, users)) {
+      const token = jwt.sign(
+        { login: user.login, email: user.email },
+        "strepxej"
+      );
+      user = { ...user, token };
       dispatch(addUser(user));
       cleanNewUser();
     } else {
@@ -39,7 +46,7 @@ const NewUser = () => {
   };
 
   const cleanNewUser = () => {
-    setNewUser({ name: "", email: "", phone: "" });
+    setNewUser(emptyUser);
   };
 
   return (
@@ -75,7 +82,7 @@ const NewUser = () => {
                 <form>
                   {/* onSubmit={e => handleAddUser(e, newUser)} */}
                   <div className="form-group">
-                    <label htmlFor="nome">Nome *</label>
+                    <label htmlFor="name">Nome *</label>
                     <input
                       value={newUser.name}
                       onChange={e =>
@@ -83,7 +90,7 @@ const NewUser = () => {
                       }
                       type="text"
                       className="form-control"
-                      id="nome"
+                      id="name"
                       placeholder="Nome"
                       required
                     />
@@ -113,6 +120,20 @@ const NewUser = () => {
                       className="form-control"
                       id="login"
                       placeholder="Login"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="password">Senha *</label>
+                    <input
+                      value={newUser.password}
+                      onChange={e =>
+                        setNewUser({ ...newUser, password: e.target.value })
+                      }
+                      type="new-password"
+                      className="form-control"
+                      id="password"
+                      placeholder="Senha"
                       required
                     />
                   </div>
