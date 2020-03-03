@@ -28,7 +28,6 @@ const UserList = () => {
       }
     );
   };
-
   return (
     <div className="table-responsive p-2">
       <table className="table">

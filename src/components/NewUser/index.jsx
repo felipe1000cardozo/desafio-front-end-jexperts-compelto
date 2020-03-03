@@ -119,6 +119,7 @@ const NewUser = () => {
                       type="text"
                       className="form-control"
                       id="login"
+                      autoComplete="username"
                       placeholder="Login"
                       required
                     />
@@ -130,7 +131,8 @@ const NewUser = () => {
                       onChange={e =>
                         setNewUser({ ...newUser, password: e.target.value })
                       }
-                      type="new-password"
+                      type="password"
+                      autoComplete="new-password"
                       className="form-control"
                       id="password"
                       placeholder="Senha"
@@ -138,7 +140,7 @@ const NewUser = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="telefone">Telefone</label>
+                    <label htmlFor="phone">Telefone</label>
                     <input
                       value={newUser.phone}
                       onChange={e =>
@@ -146,7 +148,7 @@ const NewUser = () => {
                       }
                       type="phone"
                       className="form-control"
-                      id="telefone"
+                      id="phone"
                       placeholder="Telefone"
                     />
                   </div>

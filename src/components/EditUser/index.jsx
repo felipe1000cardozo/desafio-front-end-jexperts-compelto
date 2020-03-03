@@ -71,7 +71,7 @@ const EditUser = ({ index }) => {
                     }
                     type="text"
                     className="form-control"
-                    id="nome"
+                    name="nome"
                     placeholder="Nome"
                     required
                   />
@@ -85,7 +85,7 @@ const EditUser = ({ index }) => {
                     }
                     type="email"
                     className="form-control"
-                    id="email"
+                    name="email"
                     placeholder="Email"
                     required
                   />
@@ -99,7 +99,7 @@ const EditUser = ({ index }) => {
                     }
                     type="phone"
                     className="form-control"
-                    id="telefone"
+                    name="telefone"
                     placeholder="Telefone"
                   />
                 </div>
