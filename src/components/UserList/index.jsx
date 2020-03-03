@@ -13,19 +13,17 @@ const UserList = () => {
   const users = useSelector(state => state.users);
   const dispatch = useDispatch();
 
-  function handleDeleteUser(index) {
+  const handleDeleteUser = index => {
     window.confirm("Tem certeza que deseja excluir este usuário?") &&
       dispatch(removeUser(index));
-  }
+  };
 
   const copiar = text => {
     navigator.clipboard.writeText(text).then(
-      function() {
-        console.log("copiado");
+      () => {
         setCopyFeedback("Copiado para área de transferência!");
       },
-      function() {
-        console.log("Erro ao copiar!");
+      () => {
         setCopyFeedback("Erro ao copiar!");
       }
     );
@@ -65,7 +63,7 @@ const UserList = () => {
                       className="btn btn-warning mr-3 mt-1 pl-3"
                       onClick={() => copiar(user.token)}
                     >
-                      <FaCopy />
+                      <FaCopy size="20" color="#fff" />
                     </button>
                   </Tooltip>
                   <Tooltip title="Excluir usuário" placement="top">

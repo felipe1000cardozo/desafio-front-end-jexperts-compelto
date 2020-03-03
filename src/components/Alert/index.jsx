@@ -5,8 +5,8 @@ const Alert = ({ type }) => {
     case "incomplete":
       return (
         <div className="alert alert-danger mb-1" role="alert">
-          <strong>Campos incompletos</strong> Por favor preencha todos os
-          campos.
+          <strong>Campos incompletos</strong> Por favor preencha todos os campos
+          obrigatórios.
         </div>
       );
     case "alreadyExistEmail":
@@ -27,16 +27,3 @@ const Alert = ({ type }) => {
 };
 
 export default Alert;
-
-// function Notification({ text, status }) {
-//   switch (status) {
-//     case 'info':
-//       return <Info text={text} />;
-//     case 'warning':
-//       return <Warning text={text} />;
-//     case 'error':
-//       return <Error text={text} />;
-//     default:
-//       return null;
-//   }
-// }
