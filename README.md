@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Desafio JExperts
 
-## Available Scripts
+[Link para a página.](https://jexperts-challange-complete.netlify.com/)
 
-In the project directory, you can run:
+## Tabela de Conteúdo
 
-### `yarn start`
+- [Tabela de Conteúdo](#tabela-de-conte%C3%BAdo)
+- [Sobre o Projeto](#sobre-o-projeto)
+  - [Feito Com](#feito-com)
+- [Começando](#come%C3%A7ando)
+  - [Estrutura de Arquivos](#estrutura-de-arquivos)
+- [Contato](#contato)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Sobre o Projeto
 
-### `yarn test`
+Este projeto é o resultado do desafio prático proposto pela JExperts.
+"O desafio consiste na criação de um aplicação web simples para cadastro de usuários (CRUD) com autenticação."
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Feito Com
 
-### `yarn build`
+Abaixo segue o que foi utilizado na criação deste projeto:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React JS](http://facebook.github.io/react/) - O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.
+- [Create React App](https://github.com/facebook/create-react-app) - Para gerar o template/configurações iniciais para o desenvolvimento em React.
+- [Redux](https://redux.js.org/) - Biblioteca JavaScript de código aberto para gerenciar o estado da aplicação.
+- [React Redux](https://react-redux.js.org/) - Ligação oficial de React para Redux.
+- [Redux Persist](https://github.com/rt2zz/redux-persist) - Utilizado para persistência de estados no armazenamento local.
+- [React Icons](https://react-icons.netlify.com/#/) - Utilizado para adicionar bibliotecas populares de ícones ao projeto.
+- [Styled Components](https://styled-components.com/) - Biblioteca para React e React Native que permite utilizar estilos ao nível de componente na aplicação.
+- [Bootstrap 4](https://getbootstrap.com/) - O Bootstrap é uma ferramenta gratuita para desenvolvimento HTML, CSS e JS.
+- [Material-UI](https://material-ui.com/) - Biblioteca de components estilizados para React.
+- [JSON Web Tokens](https://jwt.io/) - Padrão aberto que define um método compacto e seguro para transmissão de informações.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<!-- GETTING STARTED -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Começando
 
-### `yarn eject`
+Para rodar a aplicação basta rodar o comando "yarn start" na pasta do projeto ou então o comando "yarn build" para gerar os arquivos estáticos.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Debugger para decodificar o JWT [jwt.io](https://jwt.io/#debugger) key: strepxej
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Estrutura de Arquivos
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A estrutura de arquivos está da seguinte maneira:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+├── src/
+│   ├── components/
+│   │   └── Alert/
+│   │       └── index.jsx
+│   │   └── EditUser/
+│   │       └── index.jsx
+│   │   └── NewUser/
+│   │       └── index.jsx
+│   │   └── UserList/
+│   │       └── index.jsx
+│   ├── store/
+│   │   ├── modules/
+│   │   	├── users/
+│   │   		├── actions.js
+│   │ 			└── reducer.js
+│   │   	└── rootReducer.js
+│   │   └── index.js
+│   ├── styles/
+│   │ 	├── appStyle.js
+│   │ 	└── global.js
+│   ├── utils/
+│   │   ├── emailAlreadyExist.js
+│   │   ├── emptyUserFiels.js
+│   │   ├── validateEmail.js
+│   │   ├── validateUser.js
+│   ├── App.js
+│   └── index.js
+```
 
-## Learn More
+## Contato
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+felipe1000cardozo@hotmail.com
+(48) 984960284
